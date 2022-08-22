@@ -36,6 +36,7 @@ Note: Metric scores are evaluated by character-wise classification.
 | **German-MedBERT** | Pr     | 0.727                 |
 |                    | Re     | 0.818                 |
 |                    | F1     | 0.770                 |
+
 **Test Set**:  
 | **Model**          | Metric | **Medikation** | **Diagnose** | **Dosis** | **Total** |
 |--------------------|--------|----------------|--------------|-----------|-----------|
