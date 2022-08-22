@@ -1,0 +1,4 @@
+# Ignore temp files
+/env/
+/model/
+/model.zip
