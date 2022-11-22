@@ -12,6 +12,8 @@ Key features:
 
 **Online Demo**: A demo page is available: [Demo](https://gptnermed.misit-augsburg.de/)
 
+See our **[paper](https://arxiv.org/pdf/2208.14493.pdf)** at [https://arxiv.org/pdf/2208.14493.pdf](https://arxiv.org/pdf/2208.14493.pdf).
+
 NER demonstration:  
 <kbd><img src="./demo.png" alt="NER example demo" width="600"/></kbd>
 
