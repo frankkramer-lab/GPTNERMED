@@ -10,9 +10,11 @@ Key features:
  - **Transfer-learning** for NER parsing using **gbert-large**, **GottBERT-base** or **German-MedBERT**
  - **Open, public access** to models
 
-**Online Demo**: A demo page is available: [Demo](https://gptnermed.misit-augsburg.de/)
+**Online Demo**: A demo page is available: [Demo](https://gptnermed.misit-augsburg.de/), or use the HuggingFace links given below.
 
-See our **[paper](https://arxiv.org/pdf/2208.14493.pdf)** at [https://arxiv.org/pdf/2208.14493.pdf](https://arxiv.org/pdf/2208.14493.pdf).
+See our **[published paper](https://doi.org/10.1016/j.jbi.2023.104478)** at [https://doi.org/10.1016/j.jbi.2023.104478](https://doi.org/10.1016/j.jbi.2023.104478).
+
+Our [pre-print paper](https://arxiv.org/pdf/2208.14493.pdf) is available at [https://arxiv.org/pdf/2208.14493.pdf](https://arxiv.org/pdf/2208.14493.pdf).
 
 NER demonstration:  
 <kbd><img src="./demo.png" alt="NER example demo" width="600"/></kbd>
@@ -22,6 +24,19 @@ The pretrained models can be retrieved from the following URLs:
 - gbert-based: [model link](https://myweb.rz.uni-augsburg.de/~freijoha/GPTNERMED/GPTNERMED_gbert.zip)
 - GottBERT-based: [model link](https://myweb.rz.uni-augsburg.de/~freijoha/GPTNERMED/GPTNERMED_GottBERT.zip)
 - German-MedBERT-based: [model link](https://myweb.rz.uni-augsburg.de/~freijoha/GPTNERMED/GPTNERMED_GermanMedBERT.zip)
+
+The models are also available on the **HuggingFace** platform:
+- gbert-based: [HuggingFace link](https://huggingface.co/jfrei/de_GPTNERMED_gbert)
+- GottBERT-based: [HuggingFace link](https://huggingface.co/jfrei/de_GPTNERMED_GottBERT)
+- German MedBERT-based: [HuggingFace link](https://huggingface.co/jfrei/de_GPTNERMED_GermanMedBERT)
+
+**HuggingFace Dataset:** The dataset is also available as a [HuggingFace Dataset](https://huggingface.co/datasets/jfrei/GPTNERMED).\
+You can load the model as follows:
+```python
+# You need to install datasets first, using: pip install datasets
+from datasets import load_dataset
+dataset = load_dataset("jfrei/GPTNERMED")
+```
 
 ## Scores
 Note: Metric scores are evaluated by character-wise classification.
@@ -71,4 +86,22 @@ unzip model.zip -d "model"
 
 # Run script
 python3 GPTNERMED.py
+```
+
+## Citation
+Cite our work with BibTex as written below or use the citation tools from the [paper](https://doi.org/10.1016/j.jbi.2023.104478).
+```
+@article{FREI2023104478,
+title = {Annotated dataset creation through large language models for non-english medical NLP},
+journal = {Journal of Biomedical Informatics},
+volume = {145},
+pages = {104478},
+year = {2023},
+issn = {1532-0464},
+doi = {https://doi.org/10.1016/j.jbi.2023.104478},
+url = {https://www.sciencedirect.com/science/article/pii/S1532046423001995},
+author = {Johann Frei and Frank Kramer},
+keywords = {Natural language processing, Information extraction, Named entity recognition, Data augmentation, Knowledge distillation, Medication detection},
+abstract = {Obtaining text datasets with semantic annotations is an effortful process, yet crucial for supervised training in natural language processing (NLP). In general, developing and applying new NLP pipelines in domain-specific contexts for tasks often requires custom-designed datasets to address NLP tasks in a supervised machine learning fashion. When operating in non-English languages for medical data processing, this exposes several minor and major, interconnected problems such as the lack of task-matching datasets as well as task-specific pre-trained models. In our work, we suggest to leverage pre-trained large language models for training data acquisition in order to retrieve sufficiently large datasets for training smaller and more efficient models for use-case-specific tasks. To demonstrate the effectiveness of your approach, we create a custom dataset that we use to train a medical NER model for German texts, GPTNERMED, yet our method remains language-independent in principle. Our obtained dataset as well as our pre-trained models are publicly available at https://github.com/frankkramer-lab/GPTNERMED.}
+}
 ```
